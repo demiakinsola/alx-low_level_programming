@@ -18,8 +18,8 @@ int main(void)
 		if (a != 113 && a != 101)
 		{
 		putchar(a);
-		a++;
 		}
+		a++;
 	}
 	putchar(10);
 	return (0);
