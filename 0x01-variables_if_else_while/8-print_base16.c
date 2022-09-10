@@ -19,14 +19,13 @@ int main(void)
 		putchar(i);
 		i++;
 	}
-	char j;
 
-	j = 'a';
+	i = 'a';
 
-	while (j < 'g')
+	while (i < 'g')
 	{
-		putchar(j);
-		j++;
+		putchar(i);
+		i++;
 	}
 	putchar(10);
 	return (0);
