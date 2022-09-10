@@ -1,9 +1,7 @@
 #include <stdio.h>
 /**
 *main - Entry point
-*
 *Description: Print all possible combinations of single-digit numbers
-*
 *Return: Always 0(Success)
 */
 
@@ -16,7 +14,7 @@ int main(void)
 	while (i <= 58)
 	{
 		putchar(i);
-		if (i < 57);
+		if (i < 57)
 		{
 			putchar(44);
 			putchar(32);
