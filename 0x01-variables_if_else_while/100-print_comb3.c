@@ -8,15 +8,16 @@
 int main(void)
 {
 	int a, b;
+
 	a = 48; /* 48 means 0 on the ascii table */
 	b = 48;
 
-	while(a < 58)
+	while (a < 58)
 	{
 		b = 48;
 		while (b < 58) /* 58 means :. It comes after 57 which means 9 */
 		{
-			if ( a != b && a < b)
+			if (a != b && a < b)
 			{
 				putchar(a);
 				putchar(b);
