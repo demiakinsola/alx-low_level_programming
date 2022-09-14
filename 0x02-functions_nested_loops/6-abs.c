@@ -3,7 +3,7 @@
 *_abs - Entry point
 *@n: Input argument
 *Description:  This computes the absolute value of an integer
-*Return: 0
+*Return: result
 */
 
 int _abs(int n)
@@ -25,5 +25,5 @@ int _abs(int n)
 	}
 	_putchar(result);
 	_putchar('\n');
-	return (0);
+	return (result);
 }
