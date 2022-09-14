@@ -4,7 +4,6 @@
 *Description: This prints the 9 times table from 0.
 *Return: void
 */
-
 void times_table(void)
 {
 	int a, b, result;
@@ -17,6 +16,13 @@ void times_table(void)
 			if (result < 10)
 			{
 				_putchar((result % 10) + '0');
+				if (b == 9)
+				{
+					break;
+				}
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 			}
 	/**
 	*The above is to get the last number for single digits
@@ -30,15 +36,13 @@ void times_table(void)
 			{
 				_putchar((result / 10) + '0');
 				_putchar((result % 10) + '0');
+				if (b == 9)
+				{
+					break;
+				}
+				_putchar(',');
+				_putchar(' ');
 			}
-
-			if (b == 9)
-			{
-				break;
-			}
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
 		}
 		_putchar('\n');
 	}
