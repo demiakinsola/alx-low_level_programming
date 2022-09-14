@@ -21,7 +21,7 @@ int _abs(int n)
 
 	else
 	{
-		result == n;
+		result = n;
 	}
 	_putchar('\n');
 	return (0);
