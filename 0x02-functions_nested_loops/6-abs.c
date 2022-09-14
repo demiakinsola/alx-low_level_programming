@@ -23,7 +23,5 @@ int _abs(int n)
 	{
 		result = n;
 	}
-	_putchar(result);
-	_putchar('\n');
 	return (result);
 }
