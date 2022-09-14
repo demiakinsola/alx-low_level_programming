@@ -13,17 +13,17 @@ void times_table(void)
 		for (b = 0; b < 10; b++)
 		{
 			result = a * b;
-			if (result < 10)
+
+			if (b == 0)
 			{
-				_putchar((result % 10) + '0');
-				if (b == 9)
-				{
-					break;
-				}
+				_putchar(result + '0');
+			}
+			else if (b != 0 && result < 10)
+			{
 				_putchar(',');
 				_putchar(' ');
-				
 				_putchar(' ');
+				_putchar((result % 10) + '0');
 			}
 	/**
 	*The above is to get the last number for single digits
@@ -33,16 +33,12 @@ void times_table(void)
 	*at a time. You have to convert it to the decimal value
 	of ascii table by adding 48 or '0'
 	*/
-			if (result >= 10)
+			else if (result >= 10)
 			{
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
-				if (b == 9)
-				{
-					break;
-				}
 				_putchar(',');
 				_putchar(' ');
+				_putchar((result / 10) + '0');
+				_putchar((result % 10) + '0');
 			}
 		}
 		_putchar('\n');
