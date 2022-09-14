@@ -15,24 +15,24 @@ void print_to_98(int n)
 	{
 		if (a < 98)
 		{
-			printf("%d, ", n);
+			printf("%d, ", a);
 		}
 		else
 		{
-			printf("%d", n);
+			printf("%d", a);
 		}
 		printf("\n");
 	}
 
 	for (b = n; b >= 98; b--)
 	{
-		if (n > 98)
+		if (b > 98)
 		{
-			printf("%d, ", n);
+			printf("%d, ", b);
 		}
 		else
 		{
-			printf("%d", n);
+			printf("%d", b);
 		}
 		printf("\n");
 	}
