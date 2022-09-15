@@ -6,9 +6,10 @@
 */
 void print_square(int size)
 {
-	int n;
+	int n, o;
 
 	n = 1;
+	o = 1;
 
 	if (size <= 0)
 	{
@@ -19,10 +20,16 @@ void print_square(int size)
 	{
 		while (n <= size)
 		{
+			while (o <= n)
+			{
+				_putchar(35);
+				o++;
+				_putchar(10);
+			}
 			_putchar(35);
 			n++;
+			_putchar(10);
 		}
-		_putchar(10);
 	}
 
 }
