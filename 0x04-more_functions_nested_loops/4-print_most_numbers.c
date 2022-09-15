@@ -11,5 +11,13 @@ void print_most_numbers(void)
 
 	i = 48;
 
-	while (i = 8
+	while (i < 58)
+	{
+		if (i == 2 && i == 4)
+		{
+			continue;
+		}
+		_putchar(i);
+		i++;
+	}
 }
