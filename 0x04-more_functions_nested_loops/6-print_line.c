@@ -17,4 +17,5 @@ void print_line(int n)
 		_putchar('_');
 		b++;
 	}
+	_putchar(10);
 }
