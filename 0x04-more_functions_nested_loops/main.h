@@ -1,4 +1,5 @@
 
+void print_square(int size);
 
 
 void print_diagonal(int n);
