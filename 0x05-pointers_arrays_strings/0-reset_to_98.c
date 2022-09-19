@@ -20,8 +20,8 @@ void reset_to_98(int *n)
 		*n = 98; /* This accesses the value stored in the pointers address */
 		/* and changes it to 98 */
 
-		i = 98;
+		i = *n;
+		_putchar(i / 10);
+		_putchar(i % 10);
 	}
-	_putchar(i / 10);
-	_putchar(i % 10);
 }
