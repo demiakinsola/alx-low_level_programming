@@ -8,9 +8,6 @@
 
 void reset_to_98(int *n)
 {
-	int i;
-
-	n = &i;
 
 	*n = 98; /* This accesses the value stored in the pointers address */
 		/* and changes it to 98 */
