@@ -11,7 +11,7 @@ int _strlen(char *s)
 	int length;
 	int i;
 
-	if (s == " ")
+	if (s = " ")
 	{
 		return (0);
 	}
