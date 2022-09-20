@@ -11,10 +11,17 @@ int _strlen(char *s)
 	int length;
 	int i;
 
-	for (i = 0; s[i]; i++)
+	if (i < 0)
 	{
-		length = i + 1;
+		return (0);
 	}
 
+	else
+	{
+		for (i = 0; s[i]; i++)
+		{
+			length = i + 1;
+		}
+	}
 	return (length);
 }
