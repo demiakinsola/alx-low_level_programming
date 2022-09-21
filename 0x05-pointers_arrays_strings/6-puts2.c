@@ -9,22 +9,14 @@
 
 void puts2(char *str)
 {
-	int i, j;
+	int i;
 
-	i = 0;
-
-/* The value of j represents every other character */
-
-	j = i + 1;
 
 	for (i = 0; str[i]; i++)
 	{
-		for (j = i + 1; j >= 0; j++)
+		if (i % 2 == 0) /* every other chaacter is odd */
 		{
-			if (i != j)
-			{
-				_putchar(str[i]);
-			}
+			_putchar(str[i]);
 		}
 	}
 	_putchar(10);
