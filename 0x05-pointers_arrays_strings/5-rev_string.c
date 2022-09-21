@@ -12,7 +12,7 @@
 void rev_string(char *s)
 {
 	int i, j, k;
-	char rev[100];
+	char rev[1000];
 	/* This is to store the reverse string initially */
 
 	for (i = 0; s[i]; i++)
@@ -21,19 +21,17 @@ void rev_string(char *s)
 	}
 
 /* i will return the total number of elements including the null character. */
-	
+
 	k = 0;
 	for (j = i - 1 ; j >= 0; j--)
 	/* j - 1 - 1 because the index does not start from the null */
 	/* character but from the element before it */
-	
+
 	{
-		_putchar(s[j]);
 		rev[k] = s[j];
 		k++;
 	}
 	/* initialise k to 0 so that rev can be an array */
-
 	for (i = 0; s[i]; i++)
 	{
 		s[i] = rev[i];
