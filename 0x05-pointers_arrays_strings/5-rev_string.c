@@ -36,5 +36,4 @@ void rev_string(char *s)
 	{
 		s[i] = rev[i];
 	}
-	_putchar('\n');
 }
