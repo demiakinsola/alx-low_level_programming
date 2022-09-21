@@ -21,11 +21,10 @@ void puts2(char *str)
 	{
 		for (j = i + 1; j >= 0; j++)
 		{
-
-		}
-		if (i != j)
-		{
-			_putchar(str[i]);
+			if (i != j)
+			{
+				_putchar(str[i]);
+			}
 		}
 	}
 	_putchar(10);
