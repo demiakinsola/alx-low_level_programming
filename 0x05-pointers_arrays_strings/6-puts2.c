@@ -16,13 +16,14 @@ void puts2(char *str)
 /* The value of j represents every other character */
 
 	j = i + 1;
+
 	for (i = 0; str[i]; i++)
 	{
 		if (i != j)
 		{
 			_putchar(str[i]);
-			j++;
 		}
+		j++;
 	}
 	_putchar(10);
 }
