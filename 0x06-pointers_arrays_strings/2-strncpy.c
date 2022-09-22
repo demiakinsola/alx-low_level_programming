@@ -16,15 +16,15 @@ char *_strncpy(char *dest, char *src, int n)
 	for (i = 0; i < n; i++)
 	{
 		dest[i] = src[i];
-	}
+
 /* i represents index here */
 
-	for (i = 0; src[i]; i++)
-	/* i represents the length of the src string. */
-	{
-		if (i < n)
+		for (i = 0; src[i]; i++)
+		/* i represents the length of the src string. */
 		{
-			dest[i] = '\0';
+			if (i < n)
+			{
+				dest[i] = '\0';
 		}
 	}
 	return (dest);
