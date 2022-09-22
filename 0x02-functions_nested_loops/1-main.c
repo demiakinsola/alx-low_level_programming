@@ -8,10 +8,6 @@
 
 int main(void)
 {
-	char c;
-
-	c = 'a';
-
-	_putchar(c);
+	print_alphabet();
 	return(0);
 }
