@@ -9,18 +9,32 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i, j;
+	int dest_length, i;
 
-	for (i = 0; dest[i]; i++)
+	for (dest_length = 0; dest[dest_length]; dest_length++)
 	{
-		_putchar(dest[i]);
+
+	}
+/* dest_length */
+/* This gives us the length of the string including the null byte*/
+
+	for (i = 0; src[i]; i++)
+	{
+		dest[dest_length] = src[i];
+		dest_length++;
+/* This attaches the last element(last index - which is supposed */
+/* to be the null byte) of dest. to the first index of src and */
+/* keeps on incrementing till i is false(a null byte) */
 	}
 
-	for (j = 0; src[j]; j++)
-	{
-		_putchar(src[j]);
-	}
-	_putchar(src['\0']);
+	dest[dest_length] = '\0';
+/* since i terminates when it sees a null value but its length */
+/* would have increased before terminating, the last index */
+/* should be assigned to the null character */
 
 	return (dest);
+/* This returns the address of the first element of dest which */
+/* is the starting address of the whole array the string is */
+/* is pointing to. It automatically sees the other elements */
+/* one after the other and stps when it sees the null character */
 }
