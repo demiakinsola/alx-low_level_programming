@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* print_array - This reverses the content of an array of integers.
+* reverse_array - This reverses the content of an array of integers.
 * @a: Input parameter pointer.
 * @n: Number of elements of the array.
 *
@@ -10,18 +10,27 @@
 
 void reverse_array(int *a, int n)
 {
-	int i, j; /* Index */
-	int rev[1000]; /* Reverse array */
+	int i, j, k; /* Index */
+	int rev[n]; /* Reverse array */
 
 	for (i = n - 1; i >= 0; i++)
 	{
 		for (j = 0; j < n; j++)
 		{
 			rev[j] = a[i];
+
+			if (j != n -1)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 /* first element of rev = last element of a */
 	/* assign a to rev because a holds the array */
 		}
 	}
-
-	a[j] = rev[j];
-}
+	for (k = 0; k < n; k++)
+	{
+		a[k] = rev[j];
+	}
+	return;
+}	
