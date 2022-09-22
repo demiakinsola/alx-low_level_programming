@@ -19,13 +19,10 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 /* i represents index here */
 
-	for (i = 0; src[i]; i++) /* src[i] means print while i is true */
+	for (i = 0; i < n; i++) /* src[i] means print while i is true */
 	/* i represents the length oh the src string. */
 	{
-		if (i < n)
-		{
-			dest[i] = '\0';
-		}
+		dest[i] = '\0';
 	}
 	return (dest);
 }
