@@ -10,27 +10,23 @@
 
 void reverse_array(int *a, int n)
 {
-	int i, j, k; /* Index */
-	int rev[n]; /* Reverse array */
 
-	for (i = n - 1; i >= 0; i++)
+	int first; /* normal array holder */
+	int last;	/* Reverse array holder */
+	int i, rev;
+
+	rev = n - 1;
+
+	for (i = 0; i < (n / 2); i++, rev--) /* n / 2 for no. of times the */
+	/* characters wil interchange. */
 	{
-		for (j = 0; j < n; j++)
-		{
-			rev[j] = a[i];
+		first = a[i]; /* put the values of a and rev inside holders */
+		last = a[rev];
 
-			if (j != n -1)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+		a[rev] = first; /* reverse their contents */
+
+		a[i] = last;
 /* first element of rev = last element of a */
-	/* assign a to rev because a holds the array */
-		}
-	}
-	for (k = 0; k < n; k++)
-	{
-		a[k] = rev[j];
 	}
 	return;
-}	
+}
