@@ -28,5 +28,4 @@ void reverse_array(int *a, int n)
 		a[i] = last;
 /* first element of rev = last element of a */
 	}
-	return;
 }
