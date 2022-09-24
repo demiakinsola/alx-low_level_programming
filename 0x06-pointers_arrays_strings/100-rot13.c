@@ -10,8 +10,8 @@
 char *rot13(char *str)
 {
 	int i, j;
-	char letters[] = "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm";
-	char encoder[] = "Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz";
+	char letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char encoder[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	i = 0;
 
@@ -19,16 +19,11 @@ char *rot13(char *str)
 	{
 		j = 0;
 
-		while (letters[j] != '\0' && encoder[j] != '\0')
+		while (letters[j] != '\0')
 		{
 			if (str[i] == letters[j])
 			{
 				str[i] = encoder[j];
-			}
-
-			else if (str[i] == encoder[j])
-			{
-				str[i] = letters[j];
 			}
 
 			j++;
