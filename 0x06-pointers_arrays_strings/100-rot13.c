@@ -2,7 +2,7 @@
 
 /**
 * *rot13 - This encodes a string using rot13.
-* @*str: Input parameter pointer.
+* @str: Input parameter pointer.
 *
 * Return: str.
 */
