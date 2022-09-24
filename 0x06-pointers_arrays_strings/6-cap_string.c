@@ -9,13 +9,13 @@
 char *cap_string(char *str)
 {
 	int i, j;
-	char separators[] = {'\t', '\n', '.', ',', ' ', '!',
+	char separators[] = {'\t', ';', '\n', '.', ',', ' ', '!',
 				'?', '"', '(', ')', '{', '}'};
 
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] == 0 && str[i] >= 97 && str[i] <= 122)
+		if (i == 0 && str[i] >= 97 && str[i] <= 122)
 		/* 1st letter or element */
 		{
 			str[i] = str[i] - 32;
