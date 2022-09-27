@@ -25,6 +25,7 @@ char *_strchr(char *s, char c)
 		else if (*(s + i) == '\0')
 		{
 			return (NULL);
+	/* NULL is a pointer that points to nothing */
 		}
 		i++;
 	}
