@@ -15,14 +15,20 @@ char *_strchr(char *s, char c)
 
 	i = 0;
 
-	while (*(s + i) != 0)
+	while (1) /* 1 means infinity */
 	{
 		if (*(s + i) == c)
 		{
 			return (s + i);
 		}
+
+		else if (*(s + i) == '\0')
+		{
+			return (NULL);
+		}
 		i++;
 	}
+	/* *(s + i) is the value at the address (s + i) */
+	/* (s + i) is address of the 'ith' element. */
 
-	return (NULL);
 }
