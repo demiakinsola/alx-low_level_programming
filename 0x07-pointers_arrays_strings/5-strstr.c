@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (count2 = 0; *(needle + count2) != '\0'; count2++)
 		{
-			if (*(haystack + count1) == *(needle + count2))
+			if (*(haystack + count1) == *(needle))
 			{
 				return (haystack + count1);
 			}
