@@ -9,7 +9,7 @@
 * @haystack: Input parameter pointer main string.
 * @needle: Input parameter pointer substring.
 *
-* Return: Pointer to begeinning of located substring.
+* Return: Pointer to beginning of located substring.
 */
 
 char *_strstr(char *haystack, char *needle)
