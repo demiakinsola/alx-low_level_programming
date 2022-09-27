@@ -27,10 +27,12 @@ char *_strpbrk(char *s, char *accept)
 				return (s + count1);
 			}
 
-			else if (*(s + count1) == '\0')
-			{
-				return (NULL);
-			}
 		}
+
+		if (*(s + count1) == '\0')
+		{
+			return (NULL);
+		}
+
 	}
 }
