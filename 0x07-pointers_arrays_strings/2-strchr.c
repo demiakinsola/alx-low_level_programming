@@ -6,7 +6,7 @@
 * @s: Input parameter pointer string.
 * @c: Input parameter character.
 *
-* Return: Pointer to first occurrence of c in string s.
+* Return: Pointer to 1st occurrence of c in string s if found, otherwise NULL.
 */
 
 char *_strchr(char *s, char c)
