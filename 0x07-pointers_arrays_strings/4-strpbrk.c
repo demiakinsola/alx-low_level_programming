@@ -16,10 +16,11 @@ char *_strpbrk(char *s, char *accept)
 	int count1, count2;
 
 	count1 = 0;
+
 	for ( ; 1; count1++)
 	{
-		count2 = 0;
-		for ( ; *(accept + count2) != '\0'; count2++)
+
+		for (count2 = 0; *(accept + count2) != '\0'; count2++)
 		{
 			if (*(s + count1) == *(accept + count2))
 			{
