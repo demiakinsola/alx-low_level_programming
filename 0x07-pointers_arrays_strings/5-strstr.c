@@ -19,15 +19,20 @@ char *_strstr(char *haystack, char *needle)
 	for (count1 = 0; 1; count1++)
 	{
 		for (count2 = 0; *(needle + count2) != '\0'; count2++)
-		{
-			if (*(haystack + count1) == *(needle))
+		{/* increment haystack by adding count2) */
+			if (*(haystack + count1 + count2) != *(needle + count2))
 			{
-				return (haystack + count1);
+				break;
 			}
 
 		}
 
-		if (*(haystack + count1) == '\0')
+		if (*(needle + count2) == '\0')
+		{
+			return (haystack + count1);
+		}
+
+		else if (*(haystack + count1) == '\0')
 		{
 			return (NULL);
 		}
