@@ -27,6 +27,10 @@ char *create_array(unsigned int size, char c)
 		while (count < size)
 	/* count starts from 0, size from 1 */
 		{
+			if (array == NULL)
+			{
+				return (NULL);
+			}
 			*(array + count) = c; /*dereferencing */
 			count++;
 		}
