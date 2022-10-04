@@ -13,6 +13,7 @@
 char *create_array(unsigned int size, char c)
 {
 	char *array;  /* pointer to array */
+	unsigned int count; /* count for size */
 
 	if (size == 0)
 	{
@@ -22,7 +23,13 @@ char *create_array(unsigned int size, char c)
 	else
 	{
 		array = malloc(sizeof(*array) * size);
-		*(array + 0) = c;
+		count = 0;
+		while (count < size)
+	/* count starts from 0, size from 1 */
+		{
+			*(array + count) = c; /*dereferencing */
+			count++;
+		}
 		return (array);
 	}
 }
