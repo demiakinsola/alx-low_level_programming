@@ -33,7 +33,6 @@ char *_strdup(char *str)
 			*(new_string + count) = *(str + count);
 			count++;
 		}
-		free(new_string);
 		return (new_string);
 	}
 }
