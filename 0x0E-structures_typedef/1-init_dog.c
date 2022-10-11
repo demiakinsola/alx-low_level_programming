@@ -8,9 +8,6 @@
  * @owner: Input parameter field.
  * Return: Void.
  */
-/* Declare the structure outside the function. */
-/* It is to give it a global scope. */
-/* Do this in a header file */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
