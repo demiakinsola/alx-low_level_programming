@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
 * *_strdup - This returns a pointer to a new string which
@@ -22,9 +23,20 @@ char *_strdup(char *str)
 	else
 	{
 		new_string = malloc(sizeof(str));
+
 		if (new_string == NULL)
 		{
 			return (NULL);
+		}
+
+		for (count = 0; *(new_string + count) != '\0'; count++)
+		{
+			if (*(new_string + count) == NULL)
+			{
+				free(*(new_string + count));
+				free(new_string);
+				return (NULL);
+			}
 		}
 
 		count = 0;
