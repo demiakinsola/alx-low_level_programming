@@ -31,9 +31,8 @@ char *_strdup(char *str)
 
 		for (count = 0; *(new_string + count) != '\0'; count++)
 		{
-			if (*(new_string + count) == NULL)
+			if (new_string + count == NULL)
 			{
-				free(*(new_string + count));
 				free(new_string);
 				return (NULL);
 			}
