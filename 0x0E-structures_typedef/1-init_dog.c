@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 
 /**
  * init_dog - This initializes a variable of type struct dog.
@@ -14,7 +15,10 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 /* To initialize an array, return its address and dereference pointer */
 /* You do not need to return the address of the age variable. */
 /* It was not declared as a pointer (float *age) */
-	(*d).name = name; /* d->name */
-	d->age = age;
-	(*d).owner = owner;
+	if (d != NULL)
+	{
+		(*d).name = name; /* d->name */
+		d->age = age;
+		(*d).owner = owner;
+	}
 }
