@@ -1,7 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
 * *_strdup - This duplicates a string and returns a pointer to a newly
 * allocated space in memory, which contains a copy of the string
@@ -10,7 +9,6 @@
 * @str: Input parameter string.
 * Return: Pointer to allocated memory.
 */
-
 char *_strdup(char *str)
 {
 	char *new_string;
