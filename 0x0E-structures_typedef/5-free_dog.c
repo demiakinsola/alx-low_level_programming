@@ -10,5 +10,6 @@
 
 void free_dog(dog_t *d)
 {
+	if (d != NULL) /* confirm that it is not freed already */
 	free(d); /* Pointer parameter to structures */
 }
