@@ -12,7 +12,8 @@ void free_dog(dog_t *d)
 {
 	if (d != NULL) /* confirm that it is not freed already */
 	{	/* free each pointer to char's memory */
-		free(d->name); /* pointer accessing a member */
+		free(d->name); /* pointer accessing a structure member */
 		free((*d).owner);
 		free(d); /* Pointer parameter to structures */
+	}
 }
