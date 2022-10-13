@@ -13,6 +13,8 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t count; /* index for the array. */
 
+	if (action != NULL)
+	/* if it isn't pointing to a null address */
 	for (count = 0; count < size; count++)
 	{
 		action(*(array + count));
