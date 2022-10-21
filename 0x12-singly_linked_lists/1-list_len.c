@@ -10,7 +10,7 @@ size_t list_len(const list_t *h)
 {
 	unsigned int elements = 0; /* no. of elements */
 
-	while (h != NULL && h->str != NULL)
+	while (h != NULL)
 	{
 		elements++;
 	}
