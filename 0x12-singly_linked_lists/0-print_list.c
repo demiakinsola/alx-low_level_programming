@@ -8,7 +8,6 @@
 
 size_t print_list(const list_t *h)
 {
-	unsigned int i; /* index for string */
 	unsigned int node = 0; /* no. of nodes */
 
 	while (h != NULL)
@@ -17,11 +16,7 @@ size_t print_list(const list_t *h)
 		{
 			printf("[0] (nil)");
 		}
-		printf("[%d] ", h->len);
-		for (i = 0; h->str[i]; i++)
-		{
-			printf("%s\n", h->str[i]);
-		}
+		printf("[%d] %s\n", h->len, h->str);
 		node++;
 		h = h->next; /* incrementer */
 	}
