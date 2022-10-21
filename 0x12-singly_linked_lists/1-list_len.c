@@ -10,10 +10,10 @@ size_t list_len(const list_t *h)
 {
 	unsigned int elements = 0; /* no. of elements */
 
-	while (h != NULL && h->str != NULL)
+	while (h && h->str) /* while both aren't pointing to a null address */
 	{
 		elements++;
+		h = h->next; /* incrementer for linked list */
 	}
-	elements = elements * 2;
 	return (elements);
 }
