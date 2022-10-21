@@ -6,8 +6,8 @@
 #include <stdlib.h>
 
 /**
- * struct ist_s - single linked list.
- * @str: string - (mallloc'ed string).
+ * struct list_s - single linked list.
+ * @str: string - (malloc'ed string).
  * @len: length of the string.
  * @next: points to the next node.
  *
