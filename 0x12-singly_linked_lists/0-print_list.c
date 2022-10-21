@@ -20,7 +20,7 @@ size_t print_list(const list_t *h)
 		printf("[%d] ", h->len);
 		for (i = 0; h->str[i]; i++)
 		{
-			printf("%s\n", h->str);
+			printf("%s\n", h->str[i]);
 		}
 		node++;
 		h = h->next; /* incrementer */
