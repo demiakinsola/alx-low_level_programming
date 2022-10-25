@@ -2,7 +2,7 @@
 
 /**
  * free_listint - This frees a linked list.
- * @head: Pointer to first node in a structure.
+ * @head: Pointer to first node in a linked list.
  * Return: Void.
  */
 
