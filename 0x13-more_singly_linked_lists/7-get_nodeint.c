@@ -13,13 +13,13 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	index = 0;
 
-	while (count <= index)
+	while (count < index)
 	{
-		if (!head) /* if the node exists */
+		if (!head) /* if the node does not exist */
 		{
 			return (NULL);
 		}
-		head = head->next;
+		head = head->next; /* gets the current node at index */
 		count++;
 	}
 	return (head);
