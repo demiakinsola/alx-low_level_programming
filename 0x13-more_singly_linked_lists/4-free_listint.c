@@ -8,9 +8,15 @@
 
 void free_listint(listint_t *head)
 {
-	while (head != NULL)
+	int i = 0;
+
+	while (head) /* while it's not pointing to a null address) */
 	{
-		free(head);
 		head = head->next;
+		i++;
 	}
+
+	while (i != 0)
+		free(head);
+
 }
