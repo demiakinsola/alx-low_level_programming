@@ -6,7 +6,7 @@
  * @idx: Index of the list where the node should be added.
  * @n: Value of integer n of the new node.
  *
- * Return: Addresss of the new node.
+ * Return: Address of the new node.
  */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
@@ -19,6 +19,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	if (!(*head)) /* if it's not pointing to anything */
 	{
+		free(new_node);
 		return (NULL);
 	}
 	if ((*head) && idx == 0)
