@@ -8,7 +8,7 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int, result = 0;
+	unsigned int result = 0;
 	int index, power; /* index for string */
 
 	if (!b) /* if it is pointing to a NULL address */
