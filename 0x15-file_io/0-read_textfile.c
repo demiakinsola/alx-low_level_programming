@@ -11,34 +11,23 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int index, fd; /* file descriptor */
-	int ret_letters = 0; /* letters read and printed */
+	int fd; /* file descriptor */
 	size_t write_bytes; /* number of bytes written */
 	char *buffer;
 
 	if (!filename) /* if it's null */
 		return (0);
-	fd = open(filename, O_CREAT | O_RDWR);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1) /* if it fails to read the file */
-	{
 		return (0);
-	}
-	
 	buffer = malloc(sizeof(char) * letters);
-	if (!buffer) /* if mlloc fails */
-		return (0);
 
-	write_bytes = write(fd, buffer, letters);
+	write_bytes = read(fd, buffer, letters);
 
 	if (write_bytes < letters || !write_bytes)
 		return (0);
 
-	read(fd, buffer, letters);
-	for (index = 0; buffer[index]; index++)
-	{
-		dprintf(fd, "%c", buffer[index]);
-		ret_letters++;
-	}
+	write(1, buffer, write_bytes);
 	close(fd);
-	return (ret_letters);
+	return (write_bytes);
 }
