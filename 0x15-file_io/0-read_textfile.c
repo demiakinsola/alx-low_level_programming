@@ -13,8 +13,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int index, fd; /* file descriptor */
 	int ret_letters = 0; /* letters read and printed */
-	unsigned long int write_bytes; /* number of bytes written */
-	char buffer[1024];
+	size_t write_bytes; /* number of bytes written */
+	char *buffer;
 
 	if (!filename) /* if it's null */
 		return (0);
@@ -23,6 +23,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
+	
+	buffer = malloc(sizeof(char) * letters);
+	if (!buffer) /* if mlloc fails */
+		return (0);
 
 	write_bytes = write(fd, buffer, letters);
 
