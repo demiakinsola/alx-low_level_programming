@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd; /* file descriptor */
-	size_t write_bytes; /* number of bytes written */
+	size_t write_bytes, ret_bytes; /* number of bytes written */
 	char *buffer;
 
 	if (!filename) /* if it's null */
@@ -21,13 +21,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1) /* if it fails to read the file */
 		return (0);
 	buffer = malloc(sizeof(char) * letters);
+	if (!buffer) /* if malloc fails */
+	{
+		return (0);
+	}
 
 	write_bytes = read(fd, buffer, letters);
 
-	if (write_bytes < letters || !write_bytes)
+	ret_bytes = write(1, buffer, write_bytes);
+	if (ret_bytes < letters || !ret_bytes)
 		return (0);
-
-	write(1, buffer, write_bytes);
 	close(fd);
-	return (write_bytes);
+	return (ret_bytes);
 }
