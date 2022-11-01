@@ -1,52 +1,28 @@
 #include "main.h"
 
 /**
- * read_write - This function reads from a file.
- * @file_from: Pointer to source file.
- * @buffer: Pointer to content copied.
- *@file_to: Pointer to destination file.
- * Return: Number of bytes copied.
+ * main - This copies the content of a file into another.
+ * @argc: Number of argument.
+ * @argv: Pointer to string
+ *
+ * Return: On success, 0. Otherwise, -1.
  */
 
-int read_write(char *file_from, char *buffer, char *file_to)
+int main(int argc, char **argv)
 {
-	int index, fd, fd2, ret_val1, ret_val2, ret_val3;
+	int ret; /* return value */
+	char *buffer;
 
-	if (!file_from && file_to) /* if it's NULL */
+	buffer = malloc(sizeof(buffer)); /* allocate memory */
+	if (buffer == NULL)
 		return (-1);
-	fd = open(file_from, O_RDWR);
-	if (fd == -1) /* if it doesn't exist */
+
+	if (argc != 3)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
-		exit(98);
+		dprintf(2, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
-	for (index = 0; buffer[index] !='\0'; index++)
-		ret_value = read(fd, buffer, 1024);
-	if (ret_value == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);    	        exit(98);
-	}
-	fd2 = open(file_to, O_TRUNC | O_RDWR);
-	if (fd2 == -1)
-	{
-		fd2 = open(file_to, O_CREAT | O_RDWR, 0644);
-		if (fd2 == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", file_to);
-			exit(99);
-		}
-	}
-	ret_value2 = write(fd2, buffer, ret_value);
-	if (ret_value2 ==  -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
-	ret_val3 = close(fd);
-	if (ret_val3 == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d", fd);
-		exit(100);
-	}
-	exit (0);
+	ret = read_file(argv[1], buffer);
+	write_file(argv[2], buffer, ret);
+	return (0);
 }
