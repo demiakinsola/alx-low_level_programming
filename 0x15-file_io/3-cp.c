@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	int ret; /* return value */
+	int ret, ret2; /* return value */
 	char *buffer;
 
 	buffer = malloc(sizeof(buffer)); /* allocate memory */
@@ -23,6 +23,6 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	ret = read_file(argv[1], buffer);
-	write_file(argv[2], buffer, ret);
+	ret_2 = write_file(argv[2], buffer, ret);
 	return (0);
 }
