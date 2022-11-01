@@ -11,8 +11,9 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, index; /* file descriptor */
-	size_t write_bytes, ret_bytes; /* number of bytes written */
+	int fd; /* file descriptor */
+	int ret_value, write_bytes;
+	size_t ret_bytes; /* number of bytes written */
 	char *buffer;
 
 	if (!filename) /* if it's null */
@@ -27,9 +28,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	write_bytes = read(fd, buffer, letters);
+	if (write_bytes == -1)
+		return (0);
 
 	ret_bytes = write(1, buffer, write_bytes);
-	if (ret_bytes < letters || !ret_bytes)
+	ret_value = ret_bytes;
+	if (ret_value == -1)
+		return (0);
+	if (ret_bytes < letters)
 		return (0);
 	close(fd);
 	return (ret_bytes);
