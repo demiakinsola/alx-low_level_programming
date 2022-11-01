@@ -21,16 +21,17 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	if (text_content) /* if it exists */
+	if (text_content) /* if it exists(!null) */
 	{
 		for (index = 0; text_content[index]; index++, length++)
 			;
+		length = length - 1;
 		ret_value = write(fd, text_content, length);
 		if (ret_value == -1)
 			return (-1);
 		return (1);
 		close(fd);
 	}
-	return (-1);
+	return (1);
 
 }
