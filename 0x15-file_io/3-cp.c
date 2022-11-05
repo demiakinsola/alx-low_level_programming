@@ -50,7 +50,10 @@ int read_file(char *file_from, char *buffer)
 		ret_value = read(fd, buffer, 1024);
 	}
 	if (ret_value == -1)
+	{
+		exit(98);
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
+	}
 	ret_val2 = close(fd);
 	if (ret_val2 == -1)
 	{
@@ -75,7 +78,7 @@ int write_file(char *file_to, char *buffer, size_t bytes)
 	if (!file_to)
 		return (-1);
 	fd = open(file_to, O_RDWR | O_TRUNC);
-	if (fd == 0)
+	if (fd != -1)
 		return (0);
 	if (fd == -1)
 		fd = open(file_to, O_RDWR | O_CREAT, 0664);
