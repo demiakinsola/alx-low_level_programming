@@ -17,12 +17,11 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
+		dprintf(2, "Usage: cp file_from file_to\n");
 	}
 	ret = read_file(argv[1], buffer);
 	ret2 = write_file(argv[2], buffer, ret);
-	dprintf(1, argv[2], ret2);
 	return (ret2);
 }
 
@@ -42,8 +41,8 @@ int read_file(char *file_from, char *buffer)
 	fd = open(file_from, O_RDWR);
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
+		dprintf(2, "Error: Can't read from file %s\n", file_from);
 	}
 
 	for (index = 0; file_from[index] != '\0'; index++)
@@ -55,8 +54,8 @@ int read_file(char *file_from, char *buffer)
 	ret_val2 = close(fd);
 	if (ret_val2 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
 		exit(100);
+		dprintf(2, "Error: Can't close fd %d\n", fd);
 	}
 	return (ret_value);
 }
@@ -76,24 +75,26 @@ int write_file(char *file_to, char *buffer, size_t bytes)
 	if (!file_to)
 		return (-1);
 	fd = open(file_to, O_RDWR | O_TRUNC);
+	if (fd == 0)
+		return (0);
 	if (fd == -1)
 		fd = open(file_to, O_RDWR | O_CREAT, 0664);
 			if (fd == -1)
 			{
-				dprintf(2, "Error: Can't write to %s\n", file_to);
 				exit(99);
+				dprintf(2, "Error: Can't write to %s\n", file_to);
 			}
 	ret_val = write(fd, buffer, bytes);
 	if (ret_val == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
 		exit(99);
+		dprintf(2, "Error: Can't write to %s\n", file_to);
 	}
 	ret_val3 = close(fd);
 	if (ret_val3 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
 		exit(100);
+		dprintf(2, "Error: Can't close fd %d\n", fd);
 	}
 	return (ret_val);
 }
