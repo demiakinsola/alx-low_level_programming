@@ -12,6 +12,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node = NULL;
 	dlistint_t *temp;
+	/* temporary node to loop trhough list */
 
 	temp = *head;
 
@@ -32,7 +33,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	temp->next = new_node;
 	new_node->prev = temp;
 	new_node->next = NULL;
-	*head = new_node;
 
 	return (*head);
 }
