@@ -22,8 +22,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->n = n;
 	if (*h == NULL) /* if the linked list is empty */
 	{
-		(*h) = new_node;
 		new_node->prev = NULL;
+		*h = new_node;
 	}
 	for (count = 0; count < idx && temp->next != NULL; count++)
 	{
@@ -34,6 +34,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->next = temp->next;
 	new_node->prev = temp;
 	temp->next = new_node;
+	new_node->next->prev = new_node;
 
 	return (new_node);
 }
